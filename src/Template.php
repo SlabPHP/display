@@ -128,6 +128,7 @@ class Template
      * @param string $filename
      * @param mixed $data
      * @param boolean $return
+     * @return string
      */
     private function load($filename, $data = array(), $return = false)
     {
@@ -214,6 +215,7 @@ class Template
      *
      * @param string $filename
      * @param string $requiredNamespace
+     * @return string
      */
     public function locateViewFile($filename, $requiredNamespace = '')
     {
@@ -249,6 +251,7 @@ class Template
      * Magic getter function for template data
      *
      * @param mixed $value
+     * @return mixed
      */
     public function __get($value)
     {
