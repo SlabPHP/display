@@ -1,0 +1,1 @@
+This is a super simple Template! Your test variable is <?php echo $this->test; ?>.

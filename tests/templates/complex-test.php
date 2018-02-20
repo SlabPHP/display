@@ -1,0 +1,1 @@
+Complex test! <?php $this->load('modules/thingy.php'); ?>

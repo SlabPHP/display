@@ -1,0 +1,32 @@
+{
+  "name": "slabphp/display",
+  "description": "SlabPHP Display and Templating Library",
+  "type": "library",
+  "keywords": ["php", "slab", "slabphp", "display"],
+  "homepage": "https://www.salernolabs.com/slab",
+  "time": "2018-02-20",
+  "license": "Apache-2.0",
+  "authors": [
+    {
+      "name": "Eric Salerno",
+      "email": "ericsalerno@gmail.com",
+      "homepage": "http://www.ericsalerno.com/",
+      "role": "Architect"
+    }
+  ],
+  "support":{
+    "email": "salernolabs@gmail.com"
+  },
+  "require-dev":{
+    "phpunit/phpunit": "^6.5"
+  },
+  "require": {
+    "psr/log": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Slab\\Display\\": "src/",
+      "Slab\\Tests\\Display\\": "tests/"
+    }
+  }
+}
