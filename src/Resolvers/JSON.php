@@ -12,6 +12,7 @@ class JSON implements \Slab\Components\Output\ResolverInterface
 {
     /**
      * @param \Slab\Components\Output\ControllerResponseInterface $response
+     * @throws \Exception
      */
     public function resolveResponse(\Slab\Components\Output\ControllerResponseInterface $response)
     {
@@ -29,6 +30,21 @@ class JSON implements \Slab\Components\Output\ResolverInterface
         }
 
         $data = $response->getData();
-        echo json_encode($data);
+
+        if (empty($data->feedData))
+        {
+            throw new \Exception("Missing feedData parameter of controller output.");
+        }
+
+        $jsonData = json_encode($data->feedData);
+
+        if (!empty($data->callback))
+        {
+            echo $data->callback . '(' . $jsonData . ');';
+        }
+        else
+        {
+            echo $jsonData;
+        }
     }
 }

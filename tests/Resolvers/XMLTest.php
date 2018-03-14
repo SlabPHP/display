@@ -15,7 +15,7 @@ class XMLTest extends \PHPUnit\Framework\TestCase
      */
     public function testResolver()
     {
-        $mock = new \Slab\Tests\Display\Mocks\ControllerOutput();
+        $mock = new \Slab\Tests\Display\Mocks\FeedControllerOutput();
 
         $resolver = new \Slab\Display\Resolvers\XML();
 
@@ -25,7 +25,6 @@ class XMLTest extends \PHPUnit\Framework\TestCase
         $output .= "    <b>one</b>" . PHP_EOL;
         $output .= "    <b>two</b>" . PHP_EOL;
         $output .= "    <c>123</c>" . PHP_EOL;
-        $output .= "    <template>resolver-template.php</template>" . PHP_EOL;
         $output .= "</data>";
 
         $this->expectOutputString($output);

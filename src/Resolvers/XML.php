@@ -31,9 +31,14 @@ class XML implements \Slab\Components\Output\ResolverInterface
 
         $data = $response->getData();
 
+        if (empty($data->feedData))
+        {
+            throw new \Exception("Missing feedData parameter of controller output.");
+        }
+
         $converter = new \SalernoLabs\PHPToXML\Convert();
         $xml = $converter
-            ->setObjectData($data)
+            ->setObjectData($data->feedData)
             ->convert();
 
         echo $xml;

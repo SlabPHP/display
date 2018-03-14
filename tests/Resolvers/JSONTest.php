@@ -15,11 +15,11 @@ class JSONTest extends \PHPUnit\Framework\TestCase
      */
     public function testResolver()
     {
-        $mock = new \Slab\Tests\Display\Mocks\ControllerOutput();
+        $mock = new \Slab\Tests\Display\Mocks\FeedControllerOutput();
 
         $resolver = new \Slab\Display\Resolvers\JSON();
 
-        $this->expectOutputString('{"a":true,"b":["one","two"],"c":123,"template":"resolver-template.php"}');
+        $this->expectOutputString('{"a":true,"b":["one","two"],"c":123}');
         $resolver->resolveResponse($mock);
     }
 }
