@@ -11,19 +11,29 @@ namespace Slab\Display\Resolvers;
 class Template implements \Slab\Components\Output\ResolverInterface
 {
     /**
+     * @var \Slab\Components\SystemInterface
+     */
+    private $system;
+
+    /**
      * @var \Slab\Display\Template
      */
     private $template;
 
     /**
-     * Template constructor.
-     * @param array $templateSearchDirectories
+     * JSON constructor.
+     * @param \Slab\Components\SystemInterface $system
      */
-    public function __construct($templateSearchDirectories = [])
+    public function __construct(\Slab\Components\SystemInterface $system)
     {
+        $this->system = $system;
+
         $this->template = new \Slab\Display\Template();
 
-        $this->template->setTemplateSearchDirectories($templateSearchDirectories);
+        if ($system->stack())
+        {
+            $this->template->setTemplateSearchDirectories($system->stack()->getViewDirectories());
+        }
     }
 
     /**

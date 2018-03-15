@@ -17,7 +17,7 @@ class XMLTest extends \PHPUnit\Framework\TestCase
     {
         $mock = new \Slab\Tests\Display\Mocks\FeedControllerOutput();
 
-        $resolver = new \Slab\Display\Resolvers\XML();
+        $resolver = new \Slab\Display\Resolvers\XML(new \Slab\Tests\Components\Mocks\System());
 
         $output = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" . PHP_EOL;
         $output .= "<data>" . PHP_EOL;

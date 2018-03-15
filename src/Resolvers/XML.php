@@ -11,6 +11,20 @@ namespace Slab\Display\Resolvers;
 class XML implements \Slab\Components\Output\ResolverInterface
 {
     /**
+     * @var \Slab\Components\SystemInterface
+     */
+    private $system;
+
+    /**
+     * JSON constructor.
+     * @param \Slab\Components\SystemInterface $system
+     */
+    public function __construct(\Slab\Components\SystemInterface $system)
+    {
+        $this->system = $system;
+    }
+
+    /**
      * @param \Slab\Components\Output\ControllerResponseInterface $response
      * @throws \Exception
      */
