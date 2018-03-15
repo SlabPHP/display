@@ -41,4 +41,9 @@ class ControllerOutput implements \Slab\Components\Output\ControllerResponseInte
             'test' => 'true'
         ];
     }
+
+    public function getStatusCode()
+    {
+        return 200;
+    }
 }

@@ -41,4 +41,10 @@ class FeedControllerOutput implements \Slab\Components\Output\ControllerResponse
             'test' => 'true'
         ];
     }
+
+    public function getStatusCode()
+    {
+        return 200;
+    }
+
 }
