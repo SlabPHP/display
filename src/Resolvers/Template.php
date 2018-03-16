@@ -43,6 +43,7 @@ class Template implements \Slab\Components\Output\ResolverInterface
     public function resolveResponse(\Slab\Components\Output\ControllerResponseInterface $response)
     {
         $data = $response->getData();
+        $data->system =& $this->system;
 
         if (empty($data->template))
         {

@@ -111,15 +111,19 @@ class Template
      * @param string $filename
      * @param mixed $data
      * @param boolean $return
+     * @return string|boolean
      */
     public function renderTemplate($filename, $data, $return = false)
     {
         $templateOutput = $this->parseTemplate($filename, $data);
 
         if ($return)
+        {
             return $templateOutput;
-        else
-            echo $templateOutput;
+        }
+
+        echo $templateOutput;
+        return true;
     }
 
     /**
@@ -130,7 +134,7 @@ class Template
      * @param boolean $return
      * @return string
      */
-    private function load($filename, $data = array(), $return = false)
+    protected function load($filename, $data = array(), $return = false)
     {
         $template = $this->createSubTemplate();
 
