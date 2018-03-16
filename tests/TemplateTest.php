@@ -31,9 +31,9 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
         $template = new \Slab\Display\Template();
         $template->setTemplateSearchDirectories(['default'=>__DIR__.'/templates']);
 
-        $output = $template->renderTemplate('complex-test.php', [], true);
+        $output = $template->renderTemplate('complex-test.php', ['val'=>'1'], true);
 
-        $this->assertEquals('Complex test! Hi! blargh...', $output);
+        $this->assertEquals('Complex test1! Hi2! blargh...2', $output);
     }
 
     /**

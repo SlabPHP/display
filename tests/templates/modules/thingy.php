@@ -1,1 +1,1 @@
-Hi! <?php $this->load('modules/another.php'); ?>
+Hi<?php echo $this->val; ?>! <?php $this->load('modules/another.php', $this); ?>

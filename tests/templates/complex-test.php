@@ -1,1 +1,1 @@
-Complex test! <?php $this->load('modules/thingy.php'); ?>
+Complex test<?php echo $this->val; ?>! <?php $this->load('modules/thingy.php', ['val'=>'2']); ?>
