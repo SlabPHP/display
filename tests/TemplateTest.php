@@ -28,6 +28,7 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
      */
     public function testComplexTemplate()
     {
+        die('asdfasdf');
         $template = new \Slab\Display\Template();
         $template->setTemplateSearchDirectories(['default'=>__DIR__.'/templates']);
 
