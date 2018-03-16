@@ -33,7 +33,7 @@ class TemplateTest extends \PHPUnit\Framework\TestCase
 
         $output = $template->renderTemplate('complex-test.php', [], true);
 
-        $this->assertEquals('Complex test! Hi!', $output);
+        $this->assertEquals('Complex test! Hi! blargh...', $output);
     }
 
     /**
