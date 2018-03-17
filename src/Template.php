@@ -123,7 +123,7 @@ class Template
         }
 
         echo $templateOutput;
-        return true;
+        return $return;
     }
 
     /**
